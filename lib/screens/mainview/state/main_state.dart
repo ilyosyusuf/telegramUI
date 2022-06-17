@@ -2,9 +2,7 @@ abstract class MainState {
   MainState();
 }
 
-class AuthState extends MainState {
-  AuthState();
-}
+
 
 class ChatState extends MainState {
   ChatState();
@@ -16,4 +14,8 @@ class ContactState extends MainState {
 
 class CallState extends MainState {
   CallState();
+}
+
+class SettingState extends MainState {
+  SettingState();
 }
