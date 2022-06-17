@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:telegram/config/init/navigation/navigator.dart';
+import 'package:telegram/config/routes/page_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      navigatorKey: NavigationService.instance.navigatorKey,
+      initialRoute: '/chats',
+      onGenerateRoute: MyRoute.instance.onGenerateRoute,
     );
   }
 }
