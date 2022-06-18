@@ -5,7 +5,7 @@ class ColorConst {
   static Color kPrimaryColor = const Color(0XFF007AFF);
   static Color kBackground = const Color(0XFFFFFFFF);
   static Color kBackgroundDark = const Color(0XFF000000);
-  static Color kAppBar = const Color(0XFFF6F6F6);
+  static Color kAppBar = Color.fromARGB(255, 241, 241, 241);
   static Color kAppBarDark = const Color(0XFF1C1C1D);
   static Color kMute = const Color(0XFFF09A37);
   static Color kMuteDarK = const Color(0XFFCD7800);

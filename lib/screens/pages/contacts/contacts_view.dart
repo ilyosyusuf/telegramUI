@@ -86,10 +86,25 @@ class ContactsView extends StatelessWidget {
                         itemCount: users.length,
                         itemBuilder: (context, i) {
                           return ListTileWidget(
-                            user: users[i],
+                            // user: users[i],
+                            leading: SizedBox(
+            width: context.w * 0.20,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(
+                  width: context.w * 0.05,
+                  
+                ),
+                CircleAvatar(
+                  radius: 25,
+                  backgroundImage: AssetImage(users[i]['image_url']),
+                ),
+              ],
+            ),
+          ),
                             title: Text(
-                              "${users[i]['name'].toString()} "
-                              " ${users[i]['surname'].toString()}",
+                              "${users[i]['name'].toString()} ${users[i]['surname'].toString()}",
                               style: FStyles.headline3s,
                             ),
                             subtitle: Text(users[i]['status'],

@@ -40,18 +40,34 @@ class CallsView extends StatelessWidget {
                         itemCount: users.length,
                         itemBuilder: (context, i) {
                           return ListTileWidget(
-                            user: users[i],
+                            // user: users[i],
+                            leading: SizedBox(
+                              width: context.w * 0.20,
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: context.w * 0.05,
+                                    child: users[i]['outgoing'] == true
+                                        ? SvgPicture.asset(
+                                            'assets/icons/outgoing_call.svg',
+                                            width: 30)
+                                        : SizedBox(),
+                                  ),
+                                  CircleAvatar(
+                                    radius: 25,
+                                    backgroundImage:
+                                        AssetImage(users[i]['image_url']),
+                                  ),
+                                ],
+                              ),
+                            ),
                             title: Text(
-                                "${users[i]['name'].toString()} "
-                                " ${users[i]['surname'].toString()}",
+                                "${users[i]['name'].toString()} ${users[i]['surname'].toString()}",
                                 style: users[i]['call'] == "Missed"
                                     ? FStyles.headline3red
                                     : FStyles.headline3s),
-                            call: users[i]['outgoing'] == true
-                                ? SvgPicture.asset(
-                                    'assets/icons/outgoing_call.svg',
-                                    width: 30)
-                                : SizedBox(),
                             subtitle: Text(users[i]['call'],
                                 style: FStyles.headline52),
                             trailing: SizedBox(

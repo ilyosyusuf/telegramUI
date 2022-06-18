@@ -43,7 +43,7 @@ class ChatView extends StatelessWidget {
                       height: 700,
                       child: ListView.builder(
                         physics: NeverScrollableScrollPhysics(),
-                        itemExtent: 90,
+                        itemExtent: 92,
                         itemCount: 7,
                         itemBuilder: (context, i) {
                           return ChatListTileWidget(user: users[i]);

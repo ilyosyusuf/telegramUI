@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/config/routes/page_routes.dart';
 import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
+import 'package:telegram/screens/pages/appearancelang/appearance_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,8 +19,9 @@ class MyApp extends StatelessWidget {
       title: 'Telegram',
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.light()),
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/mainview',
-      onGenerateRoute: MyRoute.instance.onGenerateRoute,
+      // initialRoute: '/mainview',
+      // onGenerateRoute: MyRoute.instance.onGenerateRoute,
+      home: AppearanceView(),
     );
   }
 }

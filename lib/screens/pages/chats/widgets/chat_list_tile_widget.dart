@@ -21,8 +21,7 @@ class ChatListTileWidget extends StatelessWidget {
             backgroundImage: AssetImage(user['image_url']),
           ),
           title: Text(
-            "${user['name'].toString()} "
-            " ${user['surname'].toString()}",
+            "${user['name'].toString()} ${user['surname'].toString()}",
             style: FStyles.headline3s,
           ),
           subtitle: Text(user['message'].toString()),

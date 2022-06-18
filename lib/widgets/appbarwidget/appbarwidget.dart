@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telegram/core/constants/colors/color_const.dart';
 import 'package:telegram/core/extensions/context_extension.dart';
 
 class AppBarWidget extends StatelessWidget {
@@ -14,9 +15,10 @@ class AppBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       height: context.h * 0.07,
       width: context.w,
+      color: ColorConst.kAppBar,
       child: Align(
         alignment: Alignment.center,
         child: Padding(
