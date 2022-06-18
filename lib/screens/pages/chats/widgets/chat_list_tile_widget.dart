@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram/core/components/boxdecorations/box_only_decoration.dart';
 import 'package:telegram/core/constants/font/font_style.dart';
@@ -16,6 +14,8 @@ class ChatListTileWidget extends StatelessWidget {
     return DissmissWidget(listTile: Column(
       children: [
         ListTile(
+          onTap: (){},
+          onLongPress: (){},
           leading: CircleAvatar(
             radius: 30,
             backgroundImage: AssetImage(user['image_url']),

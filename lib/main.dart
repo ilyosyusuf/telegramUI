@@ -5,9 +5,7 @@ import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await MainCubit.getUsers();
-  runApp(const MyApp()
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Telegram',
-      theme: ThemeData(),
+      theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.light()),
       navigatorKey: NavigationService.instance.navigatorKey,
       initialRoute: '/mainview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,

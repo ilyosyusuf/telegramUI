@@ -5,7 +5,7 @@ import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:flutter/services.dart' as bundle;
 
 class MainCubit extends Cubit<MainState> {
-  MainCubit() : super(ContactState());
+  MainCubit() : super(CallState());
 
   List usersList = [];
 
@@ -15,7 +15,8 @@ class MainCubit extends Cubit<MainState> {
     // usersList = lst;
     print(usersList);
     // emit(ChatState());
-    emit(ContactState());
+    // emit(ContactState());
+    emit(CallState());
     return usersList;
   }
 }

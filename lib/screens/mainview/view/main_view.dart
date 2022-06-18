@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 import 'package:telegram/screens/mainview/state/main_state.dart';
+import 'package:telegram/screens/pages/calls/pages/calls_view.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
 import 'package:telegram/screens/pages/contacts/contacts_view.dart';
 
@@ -27,9 +28,7 @@ class MainView extends StatelessWidget {
           if (state is ChatState) {
             return  ChatView();
           } else if (state is CallState) {
-            return const Center(
-              child: Text('Call'),
-            );
+            return CallsView();
           } else if (state is ContactState) {
             return ContactsView();
           } else if (state is SettingState) {

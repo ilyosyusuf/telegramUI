@@ -32,70 +32,78 @@ class ContactsView extends StatelessWidget {
               trailing: SvgPicture.asset('assets/icons/plus.svg'),
             ),
             Expanded(
-                child: SingleChildScrollView(
-                    child: Column(
-              children: [
-                ListTile(
-                    leading: SizedBox(
-                      width: context.w * 0.2,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(
-                            width: context.w * 0.03,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    ListTile(
+                        leading: SizedBox(
+                          width: context.w * 0.2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                width: context.w * 0.03,
+                              ),
+                              CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.white,
+                                child: SvgPicture.asset(
+                                    'assets/icons/location.svg'),
+                              ),
+                            ],
                           ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            child:
-                                SvgPicture.asset('assets/icons/location.svg'),
+                        ),
+                        title: Text(
+                          "Add People Nearby",
+                          style: FStyles.headline3blue,
+                        )),
+                    Divider(thickness: 1),
+                    ListTile(
+                        leading: SizedBox(
+                          width: context.w * 0.2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(width: context.w * 0.03),
+                              CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.white,
+                                child:
+                                    SvgPicture.asset('assets/icons/invite.svg'),
+                              ),
+                            ],
                           ),
-                        ],
+                        ),
+                        title: Text(
+                          "Invite Friends",
+                          style: FStyles.headline3blue,
+                        )),
+                    Divider(thickness: 1),
+                    SizedBox(
+                      height: 1000,
+                      child: ListView.builder(
+                        physics: NeverScrollableScrollPhysics(),
+                        itemCount: users.length,
+                        itemBuilder: (context, i) {
+                          return ListTileWidget(
+                            user: users[i],
+                            title: Text(
+                              "${users[i]['name'].toString()} "
+                              " ${users[i]['surname'].toString()}",
+                              style: FStyles.headline3s,
+                            ),
+                            subtitle: Text(users[i]['status'],
+                                style: users[i]['status'] == "online"
+                                    ? FStyles.headline5blue
+                                    : FStyles.headline52),
+                          );
+                        },
                       ),
-                    ),
-                    title: Text(
-                      "Add People Nearby",
-                      style: FStyles.headline3blue,
-                    )),
-                Divider(thickness: 1),
-                ListTile(
-                    leading: SizedBox(
-                      width: context.w * 0.2,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SizedBox(width: context.w * 0.03),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            child: SvgPicture.asset('assets/icons/invite.svg'),
-                          ),
-                        ],
-                      ),
-                    ),
-                    title: Text(
-                      "Invite Friends",
-                      style: FStyles.headline3blue,
-                    )),
-                Divider(thickness: 1),
-                SizedBox(
-                  height: 1000,
-                  child: ListView.builder(
-                      physics: NeverScrollableScrollPhysics(),
-                      itemCount: users.length,
-                      itemBuilder: (context, i) {
-                        return ListTileWidget(
-                          user: users[i],
-                          call: SvgPicture.asset('assets/icons/call_outline.svg',),
-                          subtitle: Text(users[i]['status'],
-                              style: users[i]['status'] == "online"
-                                  ? FStyles.headline5blue
-                                  : FStyles.headline52),
-                        );
-                      }),
-                )
-              ],
-            )))
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),

@@ -13,7 +13,8 @@
         "info": "10/13",
         "message": "images",
         "moment": "Fri",
-        "pin": "pinned"
+        "pin": "pinned",
+        "outgoing": true
     },
     {
         "id": 2,
@@ -29,7 +30,8 @@
         "info": "10/11",
         "message": "GIF",
         "moment": "9/29",
-        "pin": "pinned"
+        "pin": "pinned",
+        "outgoing": true
     },
     {
         "id": 3,
@@ -45,7 +47,8 @@
         "info": "10/8",
         "message": "Let's choose the first option",
         "moment": "Sun",
-        "pin": "pinned"
+        "pin": "pinned",
+        "outgoing": true
     },
     {
         "id": 4,
@@ -61,7 +64,8 @@
         "info": "9/30",
         "message": "GIF, Suggested by @alex_21",
         "moment": "10:42",
-        "pin": "17"
+        "pin": "17",
+        "outgoing": false
     },
     {
         "id": 5,
@@ -77,7 +81,8 @@
         "info": "9/24",
         "message": "Like your quote about...",
         "moment": "09:17",
-        "pin": "10"
+        "pin": "10",
+        "outgoing": false
     },
     {
         "id": 6,
@@ -93,7 +98,8 @@
         "info": "9/16",
         "message": "👋 IOS 13 Ddesign Kit.\nTurn your ideas into incredible wor...",
         "moment": "Sat",
-        "pin": "32"
+        "pin": "32",
+        "outgoing": true
     },
     {
         "id": 7,
@@ -109,7 +115,8 @@
         "info": "9/15",
         "message": "🤖 Sketch App 🧒🏼💻",
         "moment": "11:30",
-        "pin": "153"
+        "pin": "153",
+        "outgoing": true
     },
     {
         "id": 8,
@@ -122,7 +129,8 @@
         "image_url": "assets/images/userimages/maximillian.png",
         "bio": "Design adds value faster, than it adds cost",
         "call": "Incoming (2 min)",
-        "info": "9/15"
+        "info": "9/15",
+        "outgoing": false
     },
     {
         "id": 9,
@@ -135,7 +143,8 @@
         "image_url": "assets/images/userimages/martha.png",
         "bio": "Design adds value faster, than it adds cost",
         "call": "Incoming",
-        "info": "9/10"
+        "info": "9/10",
+        "outgoing": false
     },
     {
         "id": 10,
@@ -148,7 +157,8 @@
         "image_url": "assets/images/userimages/tabitha.png",
         "bio": "Design adds value faster, than it adds cost",
         "call": "Outgoing",
-        "info": "9/10"
+        "info": "9/10",
+        "outgoing": true
     },
     {
         "id": 11,
@@ -161,6 +171,7 @@
         "image_url": "assets/images/userimages/maisy.png",
         "bio": "Design adds value faster, than it adds cost",
         "call": "Missed",
-        "info": "8/22"
+        "info": "8/22",
+        "outgoing": false
     }
 ]
