@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telegram/screens/mainview/view/main_view.dart';
-import 'package:telegram/screens/pages/chats/pages/chat_page.dart';
+import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
 
 class MyRoute {
   static final MyRoute _instance = MyRoute._init();
@@ -13,7 +13,7 @@ class MyRoute {
       case '/mainview':
         return _pages(MainView());
       case '/chats':
-        return _pages(ChatPage());
+        return _pages(ChatView());
     }
   }
 

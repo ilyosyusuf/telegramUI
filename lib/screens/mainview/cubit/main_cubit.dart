@@ -5,7 +5,7 @@ import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:flutter/services.dart' as bundle;
 
 class MainCubit extends Cubit<MainState> {
-  MainCubit() : super(ChatState());
+  MainCubit() : super(ContactState());
 
   List usersList = [];
 
@@ -14,7 +14,8 @@ class MainCubit extends Cubit<MainState> {
     usersList = jsonDecode(data) as List;
     // usersList = lst;
     print(usersList);
-    emit(ChatState());
+    // emit(ChatState());
+    emit(ContactState());
     return usersList;
   }
 }

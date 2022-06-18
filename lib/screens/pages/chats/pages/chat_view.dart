@@ -9,8 +9,8 @@ import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 import 'package:telegram/screens/pages/chats/widgets/chat_list_tile_widget.dart';
 import 'package:telegram/widgets/appbarwidget/appbarwidget.dart';
 
-class ChatPage extends StatelessWidget {
-  const ChatPage({Key? key}) : super(key: key);
+class ChatView extends StatelessWidget {
+  const ChatView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
