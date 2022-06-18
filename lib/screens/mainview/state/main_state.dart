@@ -2,9 +2,8 @@ abstract class MainState {
   MainState();
 }
 
-
-
 class ChatState extends MainState {
+  // List<dynamic> usersList = [];
   ChatState();
 }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telegram/screens/mainview/view/main_view.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_page.dart';
 
 class MyRoute {
@@ -9,7 +10,9 @@ class MyRoute {
   Route? onGenerateRoute(RouteSettings settings) {
     var args = settings.arguments;
     switch (settings.name) {
-      case '/chatpage':
+      case '/mainview':
+        return _pages(MainView());
+      case '/chats':
         return _pages(ChatPage());
     }
   }

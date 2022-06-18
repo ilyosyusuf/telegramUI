@@ -11,7 +11,7 @@
         "bio": "Design adds value faster, than it adds cost",
         "call": "Outgoing (2 min)",
         "info": "10/13",
-        "message": "image.jpeg",
+        "message": "images",
         "moment": "Fri",
         "pin": "pinned"
     },
@@ -90,7 +90,10 @@
         "image_url": "assets/images/userimages/karen.png",
         "bio": "Design adds value faster, than it adds cost",
         "call": "Outgoing (4 min)",
-        "info": "9/16"
+        "info": "9/16",
+        "message": "👋 IOS 13 Ddesign Kit.\nTurn your ideas into incredible wor...",
+        "moment": "Sat",
+        "pin": "32"
     },
     {
         "id": 7,
@@ -104,9 +107,9 @@
         "bio": "Design adds value faster, than it adds cost",
         "call": "Outgoing",
         "info": "9/15",
-        "message": "👋 IOS 13 Ddesign Kit.\nTurn your ideas into incredible wor...",
-        "moment": "Sat",
-        "pin": "32"
+        "message": "🤖 Sketch App 🧒🏼💻",
+        "moment": "11:30",
+        "pin": "153"
     },
     {
         "id": 8,
