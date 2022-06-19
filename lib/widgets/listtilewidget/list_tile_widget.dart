@@ -18,8 +18,7 @@ class ListTileWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          
+        ListTile(          
           onTap: () {},
           leading: leading,
           // leading: SizedBox(
