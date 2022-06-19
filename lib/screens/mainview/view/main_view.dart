@@ -5,6 +5,7 @@ import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:telegram/screens/pages/calls/pages/calls_view.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
 import 'package:telegram/screens/pages/contacts/contacts_view.dart';
+import 'package:telegram/widgets/bottomnavigationbar/bottom_navigation_bar_widget.dart';
 
 class MainView extends StatelessWidget {
   const MainView({Key? key}) : super(key: key);
@@ -39,6 +40,8 @@ class MainView extends StatelessWidget {
             return Container();
           }
         }),
+        bottomNavigationBar: BottomNavigationBarWidget(),
   );
+  
   }
 }

@@ -20,9 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'Telegram',
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.light()),
       navigatorKey: NavigationService.instance.navigatorKey,
-      // initialRoute: '/mainview',
-      // onGenerateRoute: MyRoute.instance.onGenerateRoute,
-      home: LanguageView()
+      initialRoute: '/mainview',
+      onGenerateRoute: MyRoute.instance.onGenerateRoute,
+      // home: LanguageView()
     );
   }
 }

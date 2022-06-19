@@ -19,4 +19,20 @@ class MainCubit extends Cubit<MainState> {
     emit(CallState());
     return usersList;
   }
+
+
+    int currentpage = 0;
+
+  pages(int index) {
+    currentpage = index;
+    if (index == 0) {
+      emit(ContactState());
+    } else if (index == 1) {
+      emit(CallState());
+    } else if (index == 2) {
+      emit(ChatState());
+    } else {
+      emit(SettingState());
+    }
+  }
 }
