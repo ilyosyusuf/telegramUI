@@ -3,6 +3,7 @@ import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/config/routes/page_routes.dart';
 import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 import 'package:telegram/screens/pages/appearance/appearance_view.dart';
+import 'package:telegram/screens/pages/authentication/auth_view.dart';
 import 'package:telegram/screens/pages/language/language_view.dart';
 
 void main() async {
@@ -20,9 +21,9 @@ class MyApp extends StatelessWidget {
       title: 'Telegram',
       theme: ThemeData(useMaterial3: true, colorScheme: ColorScheme.light()),
       navigatorKey: NavigationService.instance.navigatorKey,
-      initialRoute: '/mainview',
+      initialRoute: '/authview',
       onGenerateRoute: MyRoute.instance.onGenerateRoute,
-      // home: LanguageView()
+      // home: AuthView()
     );
   }
 }

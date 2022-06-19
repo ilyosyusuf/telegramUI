@@ -9,19 +9,21 @@ class BottomNavigationBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int currentPage = context.watch<MainCubit>().currentpage;
     return BottomNavigationBar(
-        currentIndex: context.watch<MainCubit>().currentpage,
+        currentIndex: currentPage,
         type: BottomNavigationBarType.fixed,
         onTap: (v) => context.read<MainCubit>().pages(v),
         fixedColor: ColorConst.kPrimaryColor,
         items: [
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/contact.svg'), label: 'Contact',),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/call.svg'), label: 'Call'),
-          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/chat.svg'), label: 'Chats'),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset('assets/icons/contact.svg', color: currentPage == 0 ? ColorConst.kPrimaryColor : ColorConst.kUnreadDark), label: 'Contact',),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/call.svg', color: currentPage == 1 ? ColorConst.kPrimaryColor : ColorConst.kUnreadDark), label: 'Call'),
+          BottomNavigationBarItem(icon: SvgPicture.asset('assets/icons/chat.svg', color: currentPage == 2 ? ColorConst.kPrimaryColor : ColorConst.kUnreadDark), label: 'Chats'),
           BottomNavigationBarItem(
               icon: CircleAvatar(
                 radius: 15.0,
-                backgroundColor: ColorConst.kPrimaryColor,
+                backgroundColor: ColorConst.kUnreadDark,
               ),
               label: 'Settings'),
         ]);
