@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:telegram/core/constants/colors/color_const.dart';
 
 class ListTileWidget extends StatelessWidget {
   Widget? trailing;
@@ -16,33 +17,23 @@ class ListTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(          
-          onTap: () {},
-          leading: leading,
-          // leading: SizedBox(
-          //   width: context.w * 0.20,
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       SizedBox(
-          //         width: context.w * 0.05,
-          //         child: call,
-          //       ),
-          //       CircleAvatar(
-          //         radius: 25,
-          //         backgroundImage: AssetImage(user['image_url']),
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          title: title,
-          subtitle: subtitle,
-          trailing: trailing,
-        ),
-        Divider(thickness: 1)
-      ],
+    return Container(
+      color: ColorConst.kWhite,
+      alignment: Alignment.center,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          ListTile( 
+                     
+            onTap: () {},
+            leading: leading,
+            title: title,
+            subtitle: subtitle,
+            trailing: trailing,
+          ),
+          Divider(thickness: 1)
+        ],
+      ),
     );
   }
 }

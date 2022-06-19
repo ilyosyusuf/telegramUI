@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telegram/screens/mainview/view/main_view.dart';
+import 'package:telegram/screens/pages/appearance/appearance_view.dart';
 import 'package:telegram/screens/pages/authentication/auth_view.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
 
@@ -17,6 +18,8 @@ class MyRoute {
         return _pages(ChatView());
       case '/authview':
         return _pages(AuthView());
+      case '/appearanceview':
+        return _pages(AppearanceView());
     }
   }
 

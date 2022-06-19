@@ -5,6 +5,7 @@ import 'package:telegram/core/constants/colors/color_const.dart';
 import 'package:telegram/core/constants/font/font_style.dart';
 import 'package:telegram/core/extensions/context_extension.dart';
 import 'package:telegram/widgets/appbarwidget/appbarwidget.dart';
+import 'package:telegram/widgets/buttons/back_button.dart';
 import 'package:telegram/widgets/listtilewidget/list_tile_widget.dart';
 
 class AppearanceView extends StatelessWidget {
@@ -20,8 +21,9 @@ class AppearanceView extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppBarWidget(
-            leading:
-                BackButton(color: ColorConst.kPrimaryColor, onPressed: () {}),
+            leading: BackButtonWidgets(ontap: (){
+              Navigator.pop(context);
+            }),
             center: Text(
               "Appearance",
               style: FStyles.headline3bold,

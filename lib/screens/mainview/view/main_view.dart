@@ -5,6 +5,7 @@ import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:telegram/screens/pages/calls/pages/calls_view.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
 import 'package:telegram/screens/pages/contacts/contacts_view.dart';
+import 'package:telegram/screens/pages/settings/pages/settings_view.dart';
 import 'package:telegram/widgets/bottomnavigationbar/bottom_navigation_bar_widget.dart';
 
 class MainView extends StatelessWidget {
@@ -33,9 +34,7 @@ class MainView extends StatelessWidget {
           } else if (state is ContactState) {
             return ContactsView();
           } else if (state is SettingState) {
-            return const Center(
-              child: Text('Settings'),
-            );
+            return SettingsView();
           } else {
             return Container();
           }

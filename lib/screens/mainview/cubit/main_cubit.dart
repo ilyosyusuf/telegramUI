@@ -9,8 +9,8 @@ class MainCubit extends Cubit<MainState> {
 
   List usersList = [];
 
-  Future getUsers()async{
-        final data = await bundle.rootBundle.loadString('lib/core/mock/users.json');
+  Future getUsers() async {
+    final data = await bundle.rootBundle.loadString('lib/core/mock/users.json');
     usersList = jsonDecode(data) as List;
     // usersList = lst;
     print(usersList);
@@ -20,8 +20,7 @@ class MainCubit extends Cubit<MainState> {
     return usersList;
   }
 
-
-    int currentpage = 2;
+  int currentpage = 2;
 
   pages(int index) {
     currentpage = index;
@@ -34,5 +33,38 @@ class MainCubit extends Cubit<MainState> {
     } else {
       emit(SettingState());
     }
+  }
+
+  // bools for notification page
+  bool allAccounts = true;
+  bool showNotificationsM = true;
+  bool showNotificationsG = false;
+  bool messagePreviewM = false;
+  bool messagePreviewG = false;
+
+  // functions for notification page
+  changeAllAcc(bool value) {
+    allAccounts = !allAccounts;
+    emit(SettingState());
+  }
+
+  changeShowNotifyM(bool value) {
+    showNotificationsM = !showNotificationsM;
+    emit(SettingState());
+  }
+
+  changeMesPreM(bool value) {
+    messagePreviewM = !messagePreviewM;
+    emit(SettingState());
+  }
+
+  changeShowNotifyG(bool value) {
+    showNotificationsG = !showNotificationsG;
+    emit(SettingState());
+  }
+
+  changeMesPreG(bool value) {
+    messagePreviewG = !messagePreviewG;
+    emit(SettingState());
   }
 }
