@@ -18,7 +18,7 @@ class NotificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConst.kBackground,
+      backgroundColor: ColorConst.kBackgroundColor,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(

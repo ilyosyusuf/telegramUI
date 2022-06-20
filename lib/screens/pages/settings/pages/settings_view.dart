@@ -87,9 +87,6 @@ class SettingsView extends StatelessWidget {
                               child: SettingListtileWidget(
                                   icon:
                                       context.watch<MainCubit>().secondfour[i],
-
-                                  // text:
-                                  // "text",
                                   text: context
                                       .watch<MainCubit>()
                                       .secondfourtext[i]),

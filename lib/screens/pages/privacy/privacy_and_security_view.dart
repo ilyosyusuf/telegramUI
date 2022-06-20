@@ -17,7 +17,7 @@ class PrivacyAndSecurityView extends StatelessWidget {
 
   Scaffold scaffold(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorConst.kBackground,
+      backgroundColor: ColorConst.kBackgroundColor,
       body: SafeArea(
         child: Column(
           children: [

@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/config/routes/page_routes.dart';
-import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
-import 'package:telegram/screens/pages/appearance/appearance_view.dart';
-import 'package:telegram/screens/pages/authentication/auth_view.dart';
-import 'package:telegram/screens/pages/language/language_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

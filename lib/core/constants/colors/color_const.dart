@@ -17,4 +17,5 @@ class ColorConst {
   static Color kGrey = Colors.grey.shade300;
   static Color kWhite = Colors.white;
   static Color kGreen = Color(0XFFE1FEC6);
+  static final Color kBackgroundColor = Color(0XFFEFEFF4);
 }
