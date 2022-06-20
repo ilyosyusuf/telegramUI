@@ -24,6 +24,8 @@ class MyRoute {
         return _pages(AppearanceView());
       case '/notificationview':
         return _pages(NotificationView());
+            case '/privacy':
+        return _pages(NotificationView());
       case '/chatinside':
         return _pages(ChatInsideView(data: args as List));
     }

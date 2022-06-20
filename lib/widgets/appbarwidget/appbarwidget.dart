@@ -6,9 +6,11 @@ class AppBarWidget extends StatelessWidget {
   final Widget leading;
   final Widget center;
   final Widget trailing;
+  final Color color;
   const AppBarWidget(
       {this.trailing = const SizedBox(),
       this.center = const SizedBox(),
+      this.color =  ColorConst.kAppBar,
       required this.leading,
       Key? key})
       : super(key: key);
@@ -18,7 +20,7 @@ class AppBarWidget extends StatelessWidget {
     return Container(
       height: context.h * 0.07,
       width: context.w,
-      color: ColorConst.kAppBar,
+      color: color,
       child: Align(
         alignment: Alignment.center,
         child: Padding(
