@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/core/constants/font/font_style.dart';
 import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 import 'package:telegram/screens/pages/chats/widgets/chat_list_tile_widget.dart';
@@ -46,7 +47,13 @@ class ChatView extends StatelessWidget {
                         itemExtent: 92,
                         itemCount: 7,
                         itemBuilder: (context, i) {
-                          return ChatListTileWidget(user: users[i]);
+                          return 
+                          InkWell(
+                            onTap: (){
+                              NavigationService.instance.pushNamed('/chatinside', args: users);
+                            },
+                           child: ChatListTileWidget(user: users[i])
+                          );
                         },
                       ),
                     )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/core/components/boxdecorations/box_only_decoration.dart';
 import 'package:telegram/core/constants/font/font_style.dart';
 import 'package:telegram/core/extensions/context_extension.dart';
@@ -14,7 +15,9 @@ class ChatListTileWidget extends StatelessWidget {
     return DissmissWidget(listTile: Column(
       children: [
         ListTile(
-          onTap: (){},
+          onTap: (){
+                              NavigationService.instance.pushNamed('/chatinside', args: [context, user]);
+          },
           onLongPress: (){},
           leading: CircleAvatar(
             radius: 30,

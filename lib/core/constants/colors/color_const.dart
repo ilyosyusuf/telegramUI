@@ -16,4 +16,5 @@ class ColorConst {
   static Color kPinDark = const Color(0XFF08A723);
   static Color kGrey = Colors.grey.shade300;
   static Color kWhite = Colors.white;
+  static Color kGreen = Color(0XFFE1FEC6);
 }

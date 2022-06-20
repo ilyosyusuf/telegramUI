@@ -7,7 +7,7 @@ import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:flutter/services.dart' as bundle;
 
 class MainCubit extends Cubit<MainState> {
-  MainCubit() : super(CallState());
+  MainCubit() : super(ChatState());
 
   List usersList = [];
 
@@ -22,7 +22,7 @@ class MainCubit extends Cubit<MainState> {
     // emit(ChatState());
     // emit(ContactState());
     _randomuser = usersList[Random().nextInt(usersList.length)];
-    emit(CallState());
+    emit(ChatState());
     return usersList;
   }
 
