@@ -4,6 +4,7 @@ import 'package:telegram/screens/pages/appearance/appearance_view.dart';
 import 'package:telegram/screens/pages/authentication/auth_view.dart';
 import 'package:telegram/screens/pages/chatinside/pages/chat_inside_widget.dart';
 import 'package:telegram/screens/pages/chats/pages/chat_view.dart';
+import 'package:telegram/screens/pages/notifications/notifications_view.dart';
 
 class MyRoute {
   static final MyRoute _instance = MyRoute._init();
@@ -21,6 +22,8 @@ class MyRoute {
         return _pages(AuthView());
       case '/appearanceview':
         return _pages(AppearanceView());
+      case '/notificationview':
+        return _pages(NotificationView());
       case '/chatinside':
         return _pages(ChatInsideView(data: args as List));
     }

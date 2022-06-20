@@ -96,7 +96,7 @@ class SettingsView extends StatelessWidget {
                               onTap: () {
                                 if (i == 0) {
                                   NavigationService.instance
-                                      .pushNamed('/notifications');
+                                      .pushNamed('/notificationview');
                                 } else if (i == 1) {
                                   NavigationService.instance
                                       .pushNamed('/privacy');
