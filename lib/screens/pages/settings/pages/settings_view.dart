@@ -7,6 +7,7 @@ import 'package:telegram/core/constants/font/font_style.dart';
 import 'package:telegram/core/extensions/context_extension.dart';
 import 'package:telegram/screens/mainview/cubit/main_cubit.dart';
 import 'package:telegram/screens/pages/chats/widgets/chat_list_tile_widget.dart';
+import 'package:telegram/screens/pages/settings/widgets/settings_chat_listtile_widget.dart';
 import 'package:telegram/screens/pages/settings/widgets/settings_list_tile_widget.dart';
 import 'package:telegram/widgets/appbarwidget/appbarwidget.dart';
 import 'package:telegram/widgets/listtilewidget/list_tile_widget.dart';
@@ -43,19 +44,8 @@ class SettingsView extends StatelessWidget {
                       padding: EdgeInsets.all(15.0),
                       child: CupertinoSearchTextField(),
                     ),
-                    ListTileWidget(
-                      leading: CircleAvatar(
-                        radius: 30,
-                      ),
-                      title: Text("Jacob W."),
-                      subtitle: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("+998901234567"),
-                          Text("@jacob_d")
-                        ],
-                      ),
-                      trailing: Icon(Icons.chevron_right_outlined),
+                    SettingChatListileWidgets(
+                      user: context.watch<MainCubit>().randomuser,
                     ),
                     SizedBox(height: context.h * 0.04),
                     const SettingListtileWidget(
@@ -65,7 +55,8 @@ class SettingsView extends StatelessWidget {
                             radius: 15.0),
                         text: 'Jacob design'),
                     SettingListtileWidget(
-                        icon: SvgPicture.asset('assets/icons/plus.svg'), text: 'Add account'),
+                        icon: SvgPicture.asset('assets/icons/plus.svg'),
+                        text: 'Add account'),
                     SizedBox(
                       height: context.h * 0.05,
                     ),
@@ -73,12 +64,12 @@ class SettingsView extends StatelessWidget {
                       height: context.h * 0.2,
                       child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 3,
+                          itemCount:
+                              context.watch<MainCubit>().firsthree.length,
                           itemBuilder: (context, i) {
                             return SettingListtileWidget(
-                              icon: Icon(Icons.abc),
-
-                              text: "text",
+                              icon: context.watch<MainCubit>().firsthree[i],
+                              text: context.watch<MainCubit>().firsthreetext[i],
                             );
                           }),
                     ),
@@ -89,26 +80,34 @@ class SettingsView extends StatelessWidget {
                       height: context.h * 0.3,
                       child: ListView.builder(
                           physics: const NeverScrollableScrollPhysics(),
-                          itemCount: 4,
+                          itemCount:
+                              context.watch<MainCubit>().secondfour.length,
                           itemBuilder: (context, i) {
                             return InkWell(
                               child: SettingListtileWidget(
-                                  icon: Icon(Icons.abc),
-                                  text: 
-                                    "text",
+                                  icon:
+                                      context.watch<MainCubit>().secondfour[i],
 
-                                  ),
-                                onTap: (){
-                                  if(i == 0){
-                                    NavigationService.instance.pushNamed('/notifications');
-                                  } else if(i == 1){
-                                    NavigationService.instance.pushNamed('/privacy');
-                                  }else if(i == 2){
-                                    NavigationService.instance.pushNamed('/datastorage');
-                                  }else if(i == 3){
-                                    NavigationService.instance.pushNamed('/appearanceview');
-                                  }
-                                },
+                                  // text:
+                                  // "text",
+                                  text: context
+                                      .watch<MainCubit>()
+                                      .secondfourtext[i]),
+                              onTap: () {
+                                if (i == 0) {
+                                  NavigationService.instance
+                                      .pushNamed('/notifications');
+                                } else if (i == 1) {
+                                  NavigationService.instance
+                                      .pushNamed('/privacy');
+                                } else if (i == 2) {
+                                  NavigationService.instance
+                                      .pushNamed('/datastorage');
+                                } else if (i == 3) {
+                                  NavigationService.instance
+                                      .pushNamed('/appearanceview');
+                                }
+                              },
                             );
                           }),
                     )

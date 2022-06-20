@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram/screens/mainview/state/main_state.dart';
 import 'package:flutter/services.dart' as bundle;
 
@@ -9,6 +11,9 @@ class MainCubit extends Cubit<MainState> {
 
   List usersList = [];
 
+  Map _randomuser = {};
+  get randomuser => _randomuser;
+
   Future getUsers() async {
     final data = await bundle.rootBundle.loadString('lib/core/mock/users.json');
     usersList = jsonDecode(data) as List;
@@ -16,6 +21,7 @@ class MainCubit extends Cubit<MainState> {
     print(usersList);
     // emit(ChatState());
     // emit(ContactState());
+    _randomuser = usersList[Random().nextInt(usersList.length)];
     emit(CallState());
     return usersList;
   }
@@ -34,6 +40,25 @@ class MainCubit extends Cubit<MainState> {
       emit(SettingState());
     }
   }
+
+  List firsthree = [
+    SvgPicture.asset('assets/images/settingimages/saved.svg'),
+    SvgPicture.asset('assets/images/settingimages/recentcalls.svg'),
+    SvgPicture.asset('assets/images/settingimages/stickers.svg')
+  ];
+  List secondfour = [
+    SvgPicture.asset('assets/images/settingimages/notification.svg'),
+    SvgPicture.asset('assets/images/settingimages/privacy.svg'),
+    SvgPicture.asset('assets/images/settingimages/data.svg'),
+    SvgPicture.asset('assets/images/settingimages/appearance.svg')
+  ];
+  List firsthreetext = ['Saved messages', 'Recent calls', 'Stickers'];
+  List secondfourtext = [
+    'Notifications and Sounds',
+    'Privacy and Security',
+    'Data and Storage',
+    'Appearance'
+  ];
 
   // bools for notification page
   bool allAccounts = true;

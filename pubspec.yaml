@@ -67,6 +67,7 @@ flutter:
     - assets/images/
     - assets/images/userimages/
     - assets/images/tgimages/
+    - assets/images/settingimages/
     - assets/icons/
     - lib/core/mock/
   #   - images/a_dot_ham.jpeg
