@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:telegram/config/init/navigation/navigator.dart';
 import 'package:telegram/core/constants/colors/color_const.dart';
 import 'package:telegram/core/constants/font/font_style.dart';
 import 'package:telegram/core/extensions/context_extension.dart';
 import 'package:telegram/widgets/appbarwidget/appbarwidget.dart';
+import 'package:telegram/widgets/buttons/back_button.dart';
 import 'package:telegram/widgets/listtilewidget/list_tile_widget.dart';
+import 'package:telegram/widgets/listtilewidget/settings_list_tile_widget.dart';
 
 class PrivacyAndSecurityView extends StatelessWidget {
   const PrivacyAndSecurityView({Key? key}) : super(key: key);
@@ -23,12 +26,13 @@ class PrivacyAndSecurityView extends StatelessWidget {
           children: [
             AppBarWidget(
               color: ColorConst.kAppBar,
-              leading: TextButton(
-                onPressed: () => NavigationService.instance.pop(''),
-                child: const Text("Back"),
+              leading: BackButtonWidgets(ontap: () {
+                Navigator.pop(context);
+              }),
+              center: const Text(
+                "Privacy and Security",
+                style: FStyles.headline3bold,
               ),
-              center:
-                  const Text("Privacy and Security", style: FStyles.headline4s),
               trailing: SizedBox(width: context.w * 0.1),
             ),
             Expanded(
@@ -37,29 +41,27 @@ class PrivacyAndSecurityView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: context.h * 0.01),
-                  ListTileWidget(
-                    leading: Icon(Icons.abc),
-                    // text: "Blocked Users",
-                    title: Text("Blocked Users", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    leading: SvgPicture.asset('assets/icons/block.svg'),
+                    text: "Blocked Users",
                     trailing: SizedBox(
                       width: context.w * 40 / 375,
                       height: context.h * 0.1,
                       child: Row(
-                        children:[
+                        children: [
                           Text(
                             "9",
                             style: FStyles.headline4sgrey,
                           ),
-                           Icon(Icons.chevron_right_outlined),
+                          Icon(Icons.chevron_right_outlined),
                         ],
                       ),
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    leading: Icon(Icons.abc),
-                              title: Text("Blocked Users", style: FStyles.headline3s,),
-
+                  SettingsListTileWidget(
+                    leading: SvgPicture.asset('assets/icons/active.svg'),
+                    text: "Active Sessions",
                     trailing: SizedBox(
                       width: context.w * 40 / 375,
                       height: context.h * 0.04,
@@ -75,10 +77,9 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    leading: Icon(Icons.abc),
-                                       title: Text("Passcode & Face ID", style: FStyles.headline3s,),
-
+                  SettingsListTileWidget(
+                    leading: SvgPicture.asset('assets/icons/face.svg'),
+                    text: "Passcode & Face ID",
                     trailing: SizedBox(
                       width: context.w * 57 / 375,
                       height: context.h * 0.03,
@@ -94,9 +95,9 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    leading: Icon(Icons.abc),
-                                        title: Text("Two-Step Werification", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    leading: SvgPicture.asset('assets/icons/key.svg'),
+                    text: "Two-Step Werification",
                     trailing: SizedBox(
                       width: context.w * 53 / 375,
                       height: context.h * 0.04,
@@ -119,8 +120,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                       style: FStyles.headline4sgrey,
                     ),
                   ),
-                  ListTileWidget(
-                    title: Text("Phone Number", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "Phone Number",
                     trailing: SizedBox(
                       width: context.w * 139 / 375,
                       height: context.h * 0.02,
@@ -136,8 +137,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    title: Text("last seen & online", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "last seen & online",
                     trailing: SizedBox(
                       width: context.w * 148 / 375,
                       height: context.h * 0.04,
@@ -153,8 +154,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    title: Text("Profile Photo", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "Profile Photo",
                     trailing: SizedBox(
                       width: context.w * 121 / 375,
                       height: context.h * 0.03,
@@ -170,8 +171,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    title: Text("Voice calls", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "Voice calls",
                     trailing: SizedBox(
                       width: context.w * 139 / 375,
                       height: context.h * 0.2,
@@ -187,8 +188,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    title: Text("Forwarded Messages", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "Forwarded Messages",
                     trailing: SizedBox(
                       width: context.w * 121 / 375,
                       height: context.h * 0.3,
@@ -204,8 +205,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                     ),
                   ),
                   divider(),
-                  ListTileWidget(
-                    title: Text("Groups & Channels", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "Groups & Channels",
                     trailing: SizedBox(
                       width: context.w * 121 / 375,
                       height: context.h * 0.3,
@@ -233,8 +234,8 @@ class PrivacyAndSecurityView extends StatelessWidget {
                         "AUTOMATICALLY DELETE MY ACCOUNT",
                         style: FStyles.headline4sgrey,
                       )),
-                  ListTileWidget(
-                    title: Text("If Away For", style: FStyles.headline3s,),
+                  SettingsListTileWidget(
+                    text: "If Away For",
                     trailing: SizedBox(
                       width: context.w * 101 / 375,
                       height: context.h * 0.05,
